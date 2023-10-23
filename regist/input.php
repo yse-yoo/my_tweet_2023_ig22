@@ -34,7 +34,8 @@ if (!empty($_SESSION['regist'])) {
                     <label for="" class="form-label">Password</label>
                 </div>
                 <div>
-                    <button class="w-100 btn btn-primary">Regist</button>
+                    <button class="w-100 mb-2 btn btn-primary">Regist</button>
+                    <a href="../login/" class="w-100 btn btn-outline-primary">Sign in</a>
                 </div>
             </form>
         </div>
