@@ -10,21 +10,19 @@
     <main id="id" class="d-flex justify-content-center">
         <div class="w-50 mt-3 p-5 bg-light">
             <h2 class="h2 mb-3 fw-normal text-center">Regist</h2>
-            <form action="confirm.php" method="post">
-                <div class="form-floating mb-2">
-                    <input type="text" name="name" class="form-control">
+            <p>この内容で登録しますか？</p>
+            <form action="" method="post">
+                <div class="mb-2">
                     <label for="" class="form-label">Name</label>
+                    xxxx
                 </div>
-                <div class="form-floating mb-2">
-                    <input type="email" name="email" class="form-control">
+                <div class="mb-2">
                     <label for="" class="form-label">Email</label>
-                </div>
-                <div class="form-floating mb-2">
-                    <input type="password" name="password" class="form-control">
-                    <label for="" class="form-label">Password</label>
+                    xxxx
                 </div>
                 <div>
-                    <button class="w-100 btn btn-primary">Regist</button>
+                    <button class="w-100 mb-2 btn btn-primary">Regist</button>
+                    <a href="input.php" class="w-100 btn btn-outline-primary">Back</a>
                 </div>
             </form>
         </div>
