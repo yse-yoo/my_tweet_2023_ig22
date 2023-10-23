@@ -6,7 +6,7 @@ session_regenerate_id(true);
 // ログインユーザチェック
 $auth_user = $_SESSION['auth_user'];
 if (empty($auth_user)) {
-    //ユーザがいなかったら
+    //ユーザがいなかったらログイン画面にリダイレクト
     header('Location: login/');
     exit;
 }
@@ -41,7 +41,7 @@ if (empty($auth_user)) {
                             <a href="">Profile</a>
                         </li>
                         <li>
-                            <a href="">Sign out</a>
+                            <a href="user/logout.php">Sign out</a>
                         </li>
                     </ul>
                 </nav>
