@@ -6,9 +6,12 @@ require_once('../app.php');
 //     exit('can not get access');
 // }
 
+//IDを取得
 $id = $_GET['id'];
 
 //TODO: TweetのIDで投稿を削除する
+$tweet = new Tweet();
+$tweet->delete($id);
 
 //Tweet画面（トップページ）にリダイレクト
 header('Location: ../');

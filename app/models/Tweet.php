@@ -44,11 +44,12 @@ class Tweet extends Model
 
     /**
      * Tweet削除
-     * @param array $data
+     * @param int $id
      * @return boolean
      */
-    public function delete($data)
+    public function delete($id)
     {
+        $data['id'] = $id;
         //TweetのIDでデータを削除
         $sql = "DELETE FROM tweets WHERE id = :id";
         $stmt = $this->pdo->prepare($sql);
