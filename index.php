@@ -81,7 +81,7 @@ $tweets = $tweet->get();
 
                             <!-- post -->
                             <div class="tweet-text mt-2 mb-2">
-                                <?= $value['message'] ?>
+                                <?= nl2br($value['message']) ?>
                             </div>
 
                             <!-- tweet nav -->
