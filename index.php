@@ -64,6 +64,7 @@ $tweets = $tweet->get();
                 </div>
 
                 <div class="row">
+                    <!-- Tweetの繰り返し表示 -->
                     <?php foreach($tweets as $value): ?>
                     <div class="tweet d-flex">
                         <!-- profile image -->
@@ -74,13 +75,13 @@ $tweets = $tweet->get();
                         <div class="tweet-body">
                             <!-- user info -->
                             <div class="tweet-user">
-                                <span class="fw-bold">@YSE</span>
+                                <span class="fw-bold">@<?= $value['user_name'] ?></span>
                                 <span class="ms-1 text-secondary">30分前</span>
                             </div>
 
                             <!-- post -->
                             <div class="tweet-text mt-2 mb-2">
-                                今日は晴れました！
+                                <?= $value['message'] ?>
                             </div>
 
                             <!-- tweet nav -->
