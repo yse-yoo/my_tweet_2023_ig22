@@ -103,7 +103,7 @@ $tweets = $tweet->get();
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#">
+                                        <a href="tweet/delete.php?id=<?= $value['id'] ?>">
                                             <img src="svg/trash.svg" alt="">
                                         </a>
                                     </li>
