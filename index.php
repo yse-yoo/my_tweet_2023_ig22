@@ -1,4 +1,5 @@
 <?php
+//初期設定読み込み
 require_once('app.php');
 
 // ログインユーザチェック
@@ -63,6 +64,7 @@ $tweets = $tweet->get();
                 </div>
 
                 <div class="row">
+                    <?php foreach($tweets as $value): ?>
                     <div class="tweet d-flex">
                         <!-- profile image -->
                         <div class="profile-image">
@@ -108,94 +110,7 @@ $tweets = $tweet->get();
                             </nav>
                         </div>
                     </div>
-                    <div class="tweet d-flex">
-                        <!-- profile image -->
-                        <div class="profile-image">
-                            <img src="images/me.png">
-                        </div>
-                        <!-- tweet body -->
-                        <div class="tweet-body">
-                            <!-- user info -->
-                            <div class="tweet-user">
-                                <span class="fw-bold">@YSE</span>
-                                <span class="ms-1 text-secondary">1時間前</span>
-                            </div>
-
-                            <!-- post -->
-                            <div class="tweet-text mt-2 mb-2">
-                                東京に行ってきました！
-                            </div>
-                            <!-- tweet nav -->
-                            <nav class="tweet-nav">
-                                <ul class="d-flex">
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/bubble.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/heart.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/loop.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/trash.svg" alt="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="tweet d-flex">
-                        <!-- profile image -->
-                        <div class="profile-image">
-                            <img src="images/me.png">
-                        </div>
-                        <!-- tweet body -->
-                        <div class="tweet-body">
-                            <!-- user info -->
-                            <div class="tweet-user">
-                                <span class="fw-bold">@YSE</span>
-                                <span class="ms-1 text-secondary">2023/05/12</span>
-                            </div>
-
-                            <!-- post -->
-                            <div class="tweet-text mt-2 mb-2">
-                                コンサートに行ってきました。
-                            </div>
-                            <!-- tweet navigation -->
-                            <nav class="tweet-nav">
-                                <ul class="d-flex">
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/bubble.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/heart.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/loop.svg" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <img src="svg/trash.svg" alt="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                    <?php endforeach ?>
                 </div>
 
             </main>
