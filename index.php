@@ -1,7 +1,5 @@
 <?php
-//セッション開始
-session_start();
-session_regenerate_id(true);
+require_once('app.php');
 
 // ログインユーザチェック
 $auth_user = $_SESSION['auth_user'];
@@ -10,6 +8,10 @@ if (empty($auth_user)) {
     header('Location: login/');
     exit;
 }
+
+//Tweet投稿一覧を取得
+$tweet = new Tweet();
+$tweets = $tweet->get();
 ?>
 
 <!DOCTYPE html>
@@ -53,7 +55,7 @@ if (empty($auth_user)) {
                 <div class="row">
                     <!-- Tweet投稿フォーム -->
                     <form action="tweet/add.php" method="post">
-                        <textarea name="message" class="form-control" placeholder="いまどうしてる？"></textarea>
+                        <textarea required name="message" class="form-control" placeholder="いまどうしてる？"></textarea>
                         <div class="mt-3 mb-3 text-center">
                             <button class="btn btn-primary rounded-pill w-25">Tweet</button>
                         </div>

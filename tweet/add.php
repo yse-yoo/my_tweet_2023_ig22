@@ -17,6 +17,7 @@ if (empty($auth_user)) {
 //TODO: サニタイズ
 //POSTデータを取得
 $post = $_POST;
+//ログインユーザIDを投稿データに追加
 $post['user_id'] = $auth_user['id'];
 
 //投稿処理

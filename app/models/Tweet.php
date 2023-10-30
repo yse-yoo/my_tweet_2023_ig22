@@ -4,11 +4,13 @@ class Tweet extends Model
 {
 
     public function validate($data) {
-        
+        //TODO: messageが未入力の時のエラーチェック
     }
 
     public function get()
     {
+        // 投稿データを投稿日時の新しい順に20件取得
+        // ユーザ名も結合（JOIN）
         $sql = "SELECT 
                     tweets.id,
                     tweets.user_id,
@@ -19,6 +21,7 @@ class Tweet extends Model
                 JOIN users ON tweets.user_id = users.id
                 ORDER BY tweets.created_at DESC 
                 LIMIT 20;";
+        //SQL実行
         $values = $this->pdo->query($sql)->fetchAll(PDO::FETCH_ASSOC);
         $this->values = $values;
         return $values;
