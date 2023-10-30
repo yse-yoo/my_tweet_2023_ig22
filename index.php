@@ -76,7 +76,7 @@ $tweets = $tweet->get();
                             <!-- user info -->
                             <div class="tweet-user">
                                 <span class="fw-bold">@<?= $value['user_name'] ?></span>
-                                <span class="ms-1 text-secondary">30分前</span>
+                                <span class="ms-1 text-secondary"><?= date('Y/m/d H:i', strtotime($value['created_at'])) ?></span>
                             </div>
 
                             <!-- post -->
