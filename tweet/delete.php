@@ -6,12 +6,26 @@ require_once('../app.php');
 //     exit('can not get access');
 // }
 
+// ログインユーザチェック
+$auth_user = $_SESSION['auth_user'];
+if (empty($auth_user)) {
+    //ユーザがいなかったらログイン画面にリダイレクト
+    header('Location: login/');
+    exit;
+}
+
 //IDを取得
 $id = $_GET['id'];
 
-//TODO: TweetのIDで投稿を削除する
+//Tweet IDから1件取得
 $tweet = new Tweet();
-$tweet->delete($id);
+$delete_tweet = $tweet->fetch($id);
+
+//自分の投稿だったら削除
+if ($auth_user['id'] == $delete_tweet['user_id']) {
+    //TweetのIDで投稿を削除する
+    $tweet->delete($id);
+}
 
 //Tweet画面（トップページ）にリダイレクト
 header('Location: ../');

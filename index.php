@@ -106,9 +106,11 @@ $tweets = $tweet->get();
                                             </a>
                                         </li>
                                         <li>
+                                            <?php if ($auth_user['id'] == $value['user_id']): ?>
                                             <a href="tweet/delete.php?id=<?= $value['id'] ?>">
                                                 <img src="svg/trash.svg" alt="">
                                             </a>
+                                            <?php endif ?>
                                         </li>
                                     </ul>
                                 </nav>

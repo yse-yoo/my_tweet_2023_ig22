@@ -7,6 +7,15 @@ class Tweet extends Model
         //TODO: messageが未入力の時のエラーチェック
     }
 
+    public function fetch($id)
+    {
+        //Tweet IDで1件データ取得するSQL
+        $sql = "SELECT * FROM tweets WHERE id = {$id};";
+        //SQL実行
+        $value = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
+        return $value;
+    }
+
     public function get()
     {
         // 投稿データを投稿日時の新しい順に20件取得
